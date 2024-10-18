@@ -1,0 +1,10 @@
+import google.generativeai as genai
+genai.configure(api_key='AIzaSyA4uLCW8VTU3gwbcz5jKrslQfYpdbcbE5g')
+model = genai.GenerativeModel("gemini-1.5-flash")
+while True:
+ question=input("ASk your question:")
+ if(question.lower()=='exit'):
+    print("Thank You!")
+    break
+ response=model.generate_content(question)
+ print(response.text)
